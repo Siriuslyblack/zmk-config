@@ -1,4 +1,0 @@
-config BABBIT36
-    def_bool $(shields_list_contains,babbit36)
-config BABBIT36_DONGLE
-    def_bool $(shields_list_contains,babbit36_dongle)
