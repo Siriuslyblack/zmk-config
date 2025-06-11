@@ -1,0 +1,31 @@
+if BABBIT36_DONGLE
+
+config ZMK_KEYBOARD_NAME
+	default "babbit36"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+	default 1
+
+config BT_MAX_CONN
+	default 4
+
+config BT_MAX_PAIRED
+	default 4
+
+endif
+
+if BABBIT36
+
+config ZMK_KEYBOARD_NAME
+	default "babbit36"
+
+config SPI
+	default y
+
+endif
