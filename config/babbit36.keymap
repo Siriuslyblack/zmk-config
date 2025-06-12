@@ -140,19 +140,9 @@
             label = "qwerty";
             bindings = <
 &kp Q             &kp W  &kp E         &kp R         &kp T         &kp Y           &kp U            &kp I         &kp O    &kp P
-&mt LCTRL A       &kp S  &lt 3 D       &lt 1 F       &kp G         &kp H           &kp J            &kp K         &kp L    &mt RCTRL ENTER
+&mt LCTRL A       &kp S  &lt 3 D       &lt 2 F       &kp G         &kp H           &kp J            &kp K         &kp L    &mt RCTRL ENTER
 &mt LEFT_SHIFT Z  &kp X  &kp C         &kp V         &kp B         &kp N           &kp M            &kp COMMA     &kp DOT  &mt RIGHT_SHIFT SLASH
-                         &kp LEFT_ALT  &lt 2 ESCAPE  &mt LGUI TAB  &mt LGUI SPACE  &lt 2 BACKSPACE  &kp LEFT_ALT
-            >;
-        };
-
-        nav_right {
-            label = "nav";
-            bindings = <
-&kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
-&trans     &trans  &trans  &trans  &trans  &kp SEMI   &kp SINGLE_QUOTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans
-                   &trans  &trans  &trans  &trans     &trans            &trans
+                         &kp LEFT_ALT  &lt 1 ESCAPE  &mt LGUI TAB  &mt LGUI SPACE  &lt 1 BACKSPACE  &kp LEFT_ALT
             >;
         };
 
@@ -165,6 +155,16 @@
             >;
 
             label = "numfunc";
+        };
+
+        nav_right {
+            label = "nav";
+            bindings = <
+&kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
+&trans     &trans  &trans  &trans  &trans  &kp SEMI   &kp SINGLE_QUOTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans
+                   &trans  &trans  &trans  &trans     &trans            &trans
+            >;
         };
 
         curs_right {
