@@ -2,10 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
-#define RAISE_L 1
-#define LOWER_L 2
-#define RAISE_LOWER_L 3
+#include <dt-bindings/zmk/pointing.h>
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
@@ -100,22 +97,11 @@
         compatible = "zmk,keymap";
 
         qwerty_layer {
-            label = "qwerty";
             bindings = <
 &kp Q             &kp W  &kp E         &kp R         &kp T         &kp Y           &kp U            &kp I         &kp O    &kp P
-&mt LCTRL A       &kp S  &kp D         &lt 1 F       &kp G         &kp H           &kp J            &kp K         &kp L    &mt RCTRL ENTER
+&mt LCTRL A       &kp S  &lt 3 D       &lt 2 F       &kp G         &kp H           &kp J            &kp K         &kp L    &mt RCTRL ENTER
 &mt LEFT_SHIFT Z  &kp X  &kp C         &kp V         &kp B         &kp N           &kp M            &kp COMMA     &kp DOT  &mt RIGHT_SHIFT SLASH
-                         &kp LEFT_ALT  &lt 2 ESCAPE  &mt LGUI TAB  &mt LGUI SPACE  &lt 2 BACKSPACE  &kp LEFT_ALT
-            >;
-        };
-
-        nav_right {
-            label = "nav";
-            bindings = <
-&kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
-&trans     &trans  &trans  &trans  &trans  &kp SEMI   &kp SINGLE_QUOTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans
-                   &trans  &trans  &trans  &trans     &trans            &trans
+                         &kp LEFT_ALT  &lt 1 ESCAPE  &mt LGUI TAB  &mt LGUI SPACE  &lt 1 BACKSPACE  &kp LEFT_ALT
             >;
         };
 
@@ -126,8 +112,24 @@
 &trans        &kp F7        &kp F8        &shutdownf9   &resetf10     &bootf11      &outf12       &kp CAPSLOCK  &kp DELETE    &trans
                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
+        };
 
-            label = "numfunc";
+        nav_right {
+            bindings = <
+&kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
+&trans     &trans  &trans  &trans  &trans  &kp SEMI   &kp SINGLE_QUOTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans
+                   &trans  &trans  &trans  &trans     &trans            &trans
+            >;
+        };
+
+        curs_right {
+            bindings = <
+&msc SCRL_DOWN  &trans  &trans  &trans  &trans  &trans          &mkp LCLK       &mkp MCLK     &mkp RCLK        &msc SCRL_UP
+&trans          &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans          &trans  &trans  &trans  &trans  &trans          &trans          &trans        &trans           &trans
+                        &trans  &trans  &trans  &trans          &trans          &trans
+            >;
         };
     };
 };
