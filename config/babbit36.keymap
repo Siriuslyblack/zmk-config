@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
 &mt {
@@ -92,49 +91,12 @@
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
         };
-
-        mvlscrll: mvlscrll {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MVLSCRLL";
-            bindings = <&mmv MOVE_LEFT>, <&msc SCRL_LEFT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mvdscrld: mvdscrld {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MVDSCRLD";
-            bindings = <&mmv MOVE_DOWN>, <&msc SCRL_DOWN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mvrscrlu: mvrscrlu {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MVRSCRLU";
-            bindings = <&mmv MOVE_UP>, <&msc SCRL_UP>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mvrscrlr: mvrscrlr {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MVRSCRLR";
-            bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_RIGHT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         qwerty_layer {
-            label = "qwerty";
             bindings = <
 &kp Q             &kp W  &kp E         &kp R         &kp T         &kp Y           &kp U            &kp I         &kp O    &kp P
 &mt LCTRL A       &kp S  &lt 3 D       &lt 2 F       &kp G         &kp H           &kp J            &kp K         &kp L    &mt RCTRL ENTER
@@ -150,12 +112,9 @@
 &trans        &kp F7        &kp F8        &shutdownf9   &resetf10     &bootf11      &outf12       &kp CAPSLOCK  &kp DELETE    &trans
                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
-
-            label = "numfunc";
         };
 
         nav_right {
-            label = "nav";
             bindings = <
 &kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
 &trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
@@ -166,10 +125,10 @@
 
         curs_right {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans
-&trans  &trans  &trans  &trans  &trans  &mvlscrll  &mvdscrld  &mvrscrlu  &mvrscrlr  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans     &trans
-                &trans  &trans  &trans  &trans     &trans     &trans
+&msc SCRL_DOWN  &trans  &trans  &trans  &trans  &trans          &mkp LCLK       &mkp MCLK     &mkp RCLK        &msc SCRL_UP
+&trans          &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans          &trans  &trans  &trans  &trans  &trans          &trans          &trans        &trans           &trans
+                        &trans  &trans  &trans  &trans          &trans          &trans
             >;
         };
     };
